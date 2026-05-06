@@ -14,5 +14,13 @@
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akshaya11AA/Hand-held-radio-set-having-satellite-having-personal-tracking-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Akshaya11AA/Hand-held-radio-set-having-satellite-having-personal-tracking-system/issues"
+  },
+  "homepage": "https://github.com/Akshaya11AA/Hand-held-radio-set-having-satellite-having-personal-tracking-system#readme"
 }
