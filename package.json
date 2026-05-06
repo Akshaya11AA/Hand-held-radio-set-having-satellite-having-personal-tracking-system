@@ -1,0 +1,18 @@
+{
+  "name": "emergencylink",
+  "version": "1.0.0",
+  "description": "A mobile-first web application for managing ESP32-based handheld radio emergency communication and GPS satellite tracking devices.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

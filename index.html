@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmergencyLink — ESP32 Emergency Comms System</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" defer></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════ LOGIN ═══════════════════════════════════════ -->
+  <div id="login-page" class="login-page">
+    <div class="login-logo">
+      <div class="login-icon">📡</div>
+      <h1 class="login-title">EmergencyLink</h1>
+      <p class="login-sub">ESP32 Emergency Communication &amp; Satellite Tracking</p>
+    </div>
+    <div class="card login-card">
+      <div class="field-row">
+        <label class="field-label">Admin ID</label>
+        <input type="text" id="login-user" placeholder="admin@agency.gov" value="admin@agency.gov" />
+      </div>
+      <div class="field-row">
+        <label class="field-label">Password</label>
+        <input type="password" id="login-pass" placeholder="••••••••" value="secure123" />
+      </div>
+      <button class="btn btn-primary btn-full" onclick="Auth.login()">Sign in</button>
+      <p class="login-hint">Demo mode — any credentials work</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ MAIN APP ═══════════════════════════════════════ -->
+  <div id="main-app" class="hidden">
+
+    <!-- Global Alert Banner -->
+    <div id="alert-bar" class="alert-bar">
+      <span class="alert-icon">⚠</span>
+      <div class="alert-text" id="alert-text">Emergency detected</div>
+      <button class="alert-close" onclick="UI.dismissAlert()">✕</button>
+    </div>
+
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <span class="header-logo">📡</span>
+        <span class="header-title">EmergencyLink</span>
+        <span class="header-version">v2.0</span>
+      </div>
+      <div class="header-right">
+        <span id="mqtt-status" class="badge badge-green"><span class="dot dot-green"></span>MQTT</span>
+        <span id="clock" class="header-clock"></span>
+        <button class="icon-btn" onclick="Auth.logout()" title="Sign out">⏻</button>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="nav" class="nav">
+      <button class="nav-btn active" data-page="dashboard" onclick="UI.goto('dashboard')">
+        <span class="nav-icon">⊞</span><span>Dashboard</span>
+      </button>
+      <button class="nav-btn" data-page="tracking" onclick="UI.goto('tracking')">
+        <span class="nav-icon">📍</span><span>Tracking</span>
+      </button>
+      <button class="nav-btn" data-page="alerts" onclick="UI.goto('alerts')">
+        <span class="nav-icon">🚨</span><span>Alerts</span>
+        <span id="alert-count" class="nav-badge">2</span>
+      </button>
+      <button class="nav-btn" data-page="sensors" onclick="UI.goto('sensors')">
+        <span class="nav-icon">📊</span><span>Sensors</span>
+      </button>
+      <button class="nav-btn" data-page="voice" onclick="UI.goto('voice')">
+        <span class="nav-icon">🎤</span><span>Voice</span>
+      </button>
+      <button class="nav-btn" data-page="ai" onclick="UI.goto('ai')">
+        <span class="nav-icon">🤖</span><span>AI</span>
+      </button>
+      <button class="nav-btn" data-page="analytics" onclick="UI.goto('analytics')">
+        <span class="nav-icon">📈</span><span>Analytics</span>
+      </button>
+      <button class="nav-btn" data-page="admin" onclick="UI.goto('admin')">
+        <span class="nav-icon">⚙</span><span>Admin</span>
+      </button>
+    </nav>
+
+    <!-- Page Container -->
+    <main class="page-container">
+      <div id="page-dashboard"  class="page active"  ></div>
+      <div id="page-tracking"   class="page"         ></div>
+      <div id="page-alerts"     class="page"         ></div>
+      <div id="page-sensors"    class="page"         ></div>
+      <div id="page-voice"      class="page"         ></div>
+      <div id="page-ai"         class="page"         ></div>
+      <div id="page-analytics"  class="page"         ></div>
+      <div id="page-admin"      class="page"         ></div>
+    </main>
+
+  </div>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/sensors.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

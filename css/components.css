@@ -1,0 +1,176 @@
+/* ═══════════════════════════════════════════════════════════
+   EmergencyLink — Components
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Card ── */
+.card {
+  background: var(--bg-primary);
+  border: 0.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 14px;
+}
+.card-title {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: 12px;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.badge-green  { background: var(--green-bg);  color: var(--green-text); }
+.badge-amber  { background: var(--amber-bg);  color: var(--amber-text); }
+.badge-red    { background: var(--red-bg);    color: var(--red-text); }
+.badge-blue   { background: var(--blue-bg);   color: var(--blue-text); }
+.badge-purple { background: var(--purple-bg); color: var(--purple-text); }
+.badge-gray   { background: var(--bg-secondary); color: var(--text-secondary); border: 0.5px solid var(--border); }
+
+/* ── Dots ── */
+.dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.dot-green  { background: var(--green); }
+.dot-amber  { background: var(--amber); }
+.dot-red    { background: var(--red);  animation: pulse-red 1.2s infinite; }
+.dot-gray   { background: var(--gray); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--r-md);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 0.5px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font);
+  transition: background .15s, opacity .15s, transform .1s;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--bg-secondary); }
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--blue); color: white; border-color: var(--blue); }
+.btn-primary:hover { opacity: .88; background: var(--blue); }
+.btn-danger { background: var(--red); color: white; border-color: var(--red); }
+.btn-danger:hover { opacity: .88; background: var(--red); }
+.btn-success { background: var(--green); color: white; border-color: var(--green); }
+.btn-full { width: 100%; justify-content: center; }
+.btn-sm { height: 28px; padding: 0 10px; font-size: 11px; }
+
+/* ── Icon Button ── */
+.icon-btn {
+  width: 32px; height: 32px;
+  background: var(--bg-secondary);
+  border: 0.5px solid var(--border);
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background .15s;
+  color: var(--text-primary);
+}
+.icon-btn:hover { background: var(--bg-tertiary); }
+
+/* ── Form Fields ── */
+.field-row { margin-bottom: 12px; }
+.field-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+  display: block;
+  font-weight: 500;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  height: 38px;
+  padding: 0 11px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--r-md);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 28px; }
+input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(24,95,165,.12); }
+input::placeholder { color: var(--text-hint); }
+textarea { height: auto; padding: 10px 11px; resize: vertical; }
+
+/* ── AI Input Row ── */
+.ai-input-row { display: flex; gap: 8px; margin-top: 10px; }
+.ai-input-row input { flex: 1; }
+
+/* ── Button Row ── */
+.btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ── Empty State ── */
+.empty-state {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-hint);
+  font-size: 12px;
+}
+.empty-state .empty-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+
+/* ── Info Row ── */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 12px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-key { color: var(--text-secondary); }
+.info-val { font-weight: 500; font-family: var(--font-mono); font-size: 11px; }
+
+/* ── PTT Button ── */
+.ptt-btn {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  font-size: 28px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ptt-btn:hover { background: var(--blue-bg); border-color: var(--blue); }
+.ptt-btn.active { background: var(--red); border-color: var(--red); transform: scale(1.05); }
+
+/* ── Legend ── */
+.chart-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-secondary); }
+.legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
